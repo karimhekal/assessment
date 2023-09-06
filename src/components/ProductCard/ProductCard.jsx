@@ -35,9 +35,7 @@ class ProductCard extends React.Component {
                         <div className="product_price">{this.state.price} EGP</div>
                     </div>
                     <div className="product_bottom_section">
-                        <button onClick={
-                            ctx.addItem.bind(this, { amount: 1, ...this.props.item, size: this.props.item.sizes[0] })
-                        } className="product_button" >ADD TO CART</button>
+                        <button onClick={ctx.addItem.bind(this, { amount: 1, ...this.props.item, size: this.props.item.sizes[0], color: this.props.item.colors[0] })} className="product_button" >ADD TO CART</button>
                         <button className="heart_container">
                             <HeartIcon />
                         </button>

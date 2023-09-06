@@ -38,6 +38,7 @@ class ProductPage extends React.Component {
             product,
             amount: 1,
             size: product.sizes[0],
+            color: product.colors[0],
             id: productId
         }
 
@@ -82,6 +83,13 @@ class ProductPage extends React.Component {
         this.setState({
             ...this.state,
             size: size
+        })
+
+    }
+    selectColor(color) {
+        this.setState({
+            ...this.state,
+            color: color
         })
 
     }
@@ -134,9 +142,12 @@ class ProductPage extends React.Component {
                         <div className="size">Colors</div>
                         <div className="sizes_container">
                             {this.state.product.colors.map((color, index) => {
-                                return <div key={index} style={{
+                                return <div onClick={this.selectColor.bind(this, color)} key={index} style={{
                                     borderRadius: "100%",
                                     backgroundColor: color,
+                                    borderWidth: "1.5px",
+                                    borderStyle:"solid",
+                                    borderColor: this.state.color === color ? "black" : 'transparent',
                                     width: "28.73px",
                                     height: "28.73px",
                                 }} />
@@ -148,7 +159,7 @@ class ProductPage extends React.Component {
                                 <div>{this.state.amount}</div>
                                 <div onClick={this.increment.bind(this)}>+</div>
                             </div>
-                            <CartContext.Consumer>{(ctx) => <button onClick={ctx.addItem.bind(this, { ...this.state.product, amount: this.state.amount, size: this.state.size })} className="add_to_cart_btn">ADD TO CART</button>}</CartContext.Consumer>
+                            <CartContext.Consumer>{(ctx) => <button onClick={ctx.addItem.bind(this, { ...this.state.product, amount: this.state.amount, size: this.state.size, color: this.state.color })} className="add_to_cart_btn">ADD TO CART</button>}</CartContext.Consumer>
 
                         </div>
                     </div>

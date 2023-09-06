@@ -44,8 +44,17 @@ class Header extends React.Component {
                                     return <div className="cart_item_container">
                                         <div className="cart_item">
                                             <img className="item_image" src={require(`../../../public/images/gallery/${item.gallery[0]}.png`)} width={50} height={50} />
-                                            <div><div>{item.name}</div>
-                                                <div className="size_text">Size: {item.size}</div>
+                                            <div className="item_details">
+                                                <div>
+                                                    <div>{item.name}</div>
+                                                    <div className="size_text">Size: {item.size}</div>
+                                                    <div className="size_text">Color: <div style={{
+                                                        width: "20px",
+                                                        height: "20px",
+                                                        borderRadius: "100%",
+                                                        backgroundColor: item.color
+                                                    }}></div></div>
+                                                </div>
                                                 <div className="price_container" >{item.amount} x {item.price} = <div className="price_text"> {item.amount * item.price} EGP</div></div>
                                             </div>
                                         </div>
@@ -53,7 +62,7 @@ class Header extends React.Component {
                                     </div>
                                 })}
                             </div>
-                            <div>Total: {ctx.totalAmount}</div>
+                            <div className="sub_total"><div>Sub Total:</div> <div className="sub_total_number">{ctx.totalAmount} EGP</div></div>
                         </div> : null}
                         <div className="icon" >
                             <div onClick={() => this.toggleCart()}>

@@ -31,7 +31,7 @@ class App extends React.Component {
         <Layout>
           <Routes>
             <Route path="/" element={<Navigate to={'/product/1'} />} />
-            <Route path="/product/:id" element={<LazyProductPage />} />
+            <Route path="/product/:id" element={<ProductPage />} />
           </Routes>
         </Layout>
       </CartProvider>
