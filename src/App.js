@@ -1,9 +1,10 @@
 import './App.scss'
-import React from 'react'
+import React, { Suspense } from 'react'
 import Layout from './components/Layout/Layout'
 import ProductPage from './pages/Product/Product'
 import { Navigate, Route, Routes, useNavigate } from 'react-router'
 import CartProvider from './store/cart-provider'
+import Loader from './pages/Loader/Loader'
 const LazyProductPage = React.lazy(() => import('./pages/Product/Product'))
 
 class App extends React.Component {
@@ -27,14 +28,16 @@ class App extends React.Component {
 
   render() {
     return (
-      <CartProvider>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Navigate to={'/product/1'} />} />
-            <Route path="/product/:id" element={<ProductPage />} />
-          </Routes>
-        </Layout>
-      </CartProvider>
+      <Suspense fallback={<Loader />}>
+        <CartProvider>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Navigate to={'/product/1'} />} />
+              <Route path="/product/:id" element={<LazyProductPage />} />
+            </Routes>
+          </Layout>
+        </CartProvider>
+      </Suspense>
     )
   }
 }
