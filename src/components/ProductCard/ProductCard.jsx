@@ -27,7 +27,7 @@ class ProductCard extends React.Component {
                         <div onClick={() => {
                             this.props.navigate(`/product/${this.state.id}`)
                         }} className="product_card_image">
-                            <img alt="product" src={`${require(`../../../public/images/gallery/${this.state.gallery[1]}.png`)}`} />
+                            <img loading="lazy" alt="product" src={`${require(`../../../public/images/gallery/${this.state.gallery[1]}.png`)}`} />
                         </div>
                         <div className="product_name">{this.state.name}</div>
                         <div className="product_describtion">{this.state.describtion}</div>

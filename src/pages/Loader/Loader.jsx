@@ -26,7 +26,7 @@ export default class Loader extends Component {
     render() {
         return (
             <div className='loader_page'>
-                <img src={require(`../../../public/images/${"logo".toString()}.png`)} width={300} />
+                <img loading="lazy" src={require(`../../../public/images/${"logo".toString()}.png`)} width={300} />
 
                 <div className="loader-container">
                     <div

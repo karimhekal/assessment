@@ -25,8 +25,7 @@ class Header extends React.Component {
 
                     <div className="header_section_1">
                         <MenuIcon />
-                        <img className="Header-logo" src={require(`../../../public/images/${"logo".toString()}.png`)} alt="Logos" />
-                        {/* <img className="logo" src={logo} alt="logoo" /> */}
+                        <img loading="lazy" className="Header-logo" src={require(`../../../public/images/${"logo".toString()}.png`)} alt="Logos" />
                         <h4>Products</h4>
                         <h4>Best Seller</h4>
                         <h4>New Arrival</h4>
@@ -47,7 +46,7 @@ class Header extends React.Component {
                                 {ctx.items.map((item) => {
                                     return <div className="cart_item_container">
                                         <div className="cart_item">
-                                            <img className="item_image" src={require(`../../../public/images/gallery/${item.gallery[0]}.png`)} width={50} height={50} />
+                                            <img alt="item" loading="lazy" className="item_image" src={require(`../../../public/images/gallery/${item.gallery[0]}.png`)} width={50} height={50} />
                                             <div className="item_details">
                                                 <div>
                                                     <div>{item.name}</div>

@@ -106,16 +106,15 @@ class ProductPage extends React.Component {
                         <div className="images">
 
                             {this.state.product.gallery.map((image, index) => {
-                                return <><img key={index} alt={`${image}`} onClick={() => {
+                                return <img loading="lazy" key={index} alt={`${image}`} onClick={() => {
                                     this.setState({
                                         selectedImage: image
                                     })
                                 }} src={require(`../../../public/images/gallery/${image}.png`)} width={100} />
-                                </>
                             })}
                         </div>
                         <div className="main_image">
-                            <img alt="product_image" src={require(`../../../public/images/gallery/${this.state.selectedImage}.png`)} width={"100%"} />
+                            <img loading="lazy" alt="product_image" src={require(`../../../public/images/gallery/${this.state.selectedImage}.png`)} width={"100%"} />
                             {this.state.product.discount_price ? <div className="discount_tag">{parseInt((((this.state.product.price - this.state.product.discount_price) / this.state.product.price) * 100)) % 100}% OFF</div> : null}
                         </div>
                     </div>
