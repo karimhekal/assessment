@@ -9,7 +9,7 @@ class Header extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            showCart: true
+            showCart: false
         }
     }
     toggleCart() {
