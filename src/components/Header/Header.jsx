@@ -5,11 +5,12 @@ import SearchIcon from "../../svg/SearchIcon";
 import CartIcon from "../../svg/CartIcon";
 import ProfileIcon from "../../svg/ProfileIcon";
 import CartContext from "../../store/cart-context";
+import DeleteIcon from "../../svg/DeleteIcon";
 class Header extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            showCart: false
+            showCart: true
         }
     }
     toggleCart() {
@@ -35,23 +36,26 @@ class Header extends React.Component {
                         <div className="icon">
                             <SearchIcon />
                         </div>
-                        <div className="icon" >
-                            {this.state.showCart ? <div onClick={this.toggleCart.bind(this)} className="backdrop" /> : null}
-
-                            {this.state.showCart ? <div className="cart">
-                                <div className="mycart_title"><div>MY CART</div><div>X</div></div>
+                        {this.state.showCart ? <div onClick={this.toggleCart.bind(this)} className="backdrop" /> : null}
+                        {this.state.showCart ? <div className="cart">
+                            <div className="mycart_title"><div>MY CART</div><div onClick={this.toggleCart.bind(this)}>X</div></div>
+                            <div className="scrollable">
                                 {ctx.items.map((item) => {
-                                    return <div>
-                                        <div>
-                                            <img src={require(`../../../public/images/gallery/${item.gallery[0]}.png`)} width={50} height={50} />
+                                    return <div className="cart_item_container">
+                                        <div className="cart_item">
+                                            <img className="item_image" src={require(`../../../public/images/gallery/${item.gallery[0]}.png`)} width={50} height={50} />
                                             <div><div>{item.name}</div>
-                                                <div>{item.size}</div>
-                                                <div>{item.amount}</div>
+                                                <div className="size_text">Size: {item.size}</div>
+                                                <div className="price_container" >{item.amount} x {item.price} = <div className="price_text"> {item.amount * item.price} EGP</div></div>
                                             </div>
                                         </div>
+                                        <div onClick={ctx.removeItem.bind(this, item.id)} className="delete_item"><DeleteIcon /></div>
                                     </div>
                                 })}
-                            </div> : null}
+                            </div>
+                            <div>Total: {ctx.totalAmount}</div>
+                        </div> : null}
+                        <div className="icon" >
                             <div onClick={() => this.toggleCart()}>
                                 <CartIcon /></div>
                             <div className="cart_number">{ctx.items.length}</div>
