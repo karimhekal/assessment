@@ -8,12 +8,11 @@ export default class Layout extends React.Component {
 
     render() {
         return <div>
-            <Header />
-            <div style={{
-                paddingTop: "5rem"
-            }}>
-                {this.props.children}
-            </div>
+            <>
+                <Header />
+                <div className="layout_inner">
+                    {this.props.children}
+                </div></>
         </div>
     }
 }

@@ -91,7 +91,6 @@ class ProductPage extends React.Component {
             ...this.state,
             color: color
         })
-
     }
     render() {
 

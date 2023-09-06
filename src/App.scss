@@ -23,17 +23,21 @@
   font-weight: lighter;
   src: url("fonts/Poppins-Light.ttf") format("truetype");
 }
+
 @font-face {
   font-family: "Poppins";
   font-weight: normal;
   src: url("fonts/Poppins-Regular.ttf") format("truetype");
 }
+
 html {
   font-size: 14px;
 }
+
 .App {
   text-align: center;
 }
+
 * {
   font-family: Poppins;
   box-sizing: border-box;
@@ -48,6 +52,7 @@ button {
   color: white;
   font-weight: bold;
 }
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -78,7 +83,12 @@ button {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.layout_inner {
+  padding-top: 5rem;
 }

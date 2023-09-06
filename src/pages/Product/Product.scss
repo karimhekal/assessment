@@ -9,8 +9,7 @@
 }
 
 .product_page_inner_container {
-    max-width: 1400px;
-    // background-color: gray;
+    max-width: 1200px;
 }
 
 .product_section {
@@ -22,9 +21,23 @@
 
 }
 
-@media (max-width: 1000px) {
+@media (max-width:666px) {
     .product_section {
         grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .product_page_inner_container {
+        max-width: 100% !important;
+    }
+}
+
+@media (max-width: 1260px) {
+    .product_section {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .product_page_inner_container {
+        max-width: 600px;
     }
 
     .images {
@@ -32,6 +45,7 @@
 
     }
 }
+
 
 .gallery {
     // background-color: blue;
