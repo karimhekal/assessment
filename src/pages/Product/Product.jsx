@@ -8,6 +8,9 @@ import PanoramicIcon from "../../svg/PanoramicIcon";
 import Stars from "../../components/Stars/Stars";
 import CartContext from "../../store/cart-context";
 import withRouter from "../../components/WithRouter";
+import HeartIcon from "../../svg/HeartIcon";
+import ShareIcon from "../../svg/ShareIcon";
+import VideoIcon from "../../svg/VideoIcon";
 const responsive = {
     superLargeDesktop: {
         // the naming can be any, depends on you.
@@ -120,6 +123,8 @@ class ProductPage extends React.Component {
                     {/* details section */}
                     <div className="details">
 
+
+                        {/* product name */}
                         <div className="product_name_container">
                             <div>
                                 <div className="product_name">{this.state.product.name}</div>
@@ -129,11 +134,17 @@ class ProductPage extends React.Component {
                         </div>
 
 
+
+                        {/* prices */}
                         <div className="price_section">
                             <div className="price">{this.state.product.price} EGP</div>
                             <div className="discount">{this.state.product.discount_price || this.state.product.discount_price} EGP</div>
                         </div>
+
+                        {/* describtion */}
                         <div className="describtion">{this.state.product.describtion}</div>
+
+                        {/* sizes */}
                         <div className="size">Size</div>
                         <div className="sizes_container">
                             {this.state.product.sizes.map((size, index) => {
@@ -142,6 +153,9 @@ class ProductPage extends React.Component {
                                 }} className="size_button">{size}</div>
                             })}
                         </div>
+
+
+                        {/* colors */}
                         <div className="size">Colors</div>
                         <div className="colors_container">
                             {/* product colors */}
@@ -149,10 +163,11 @@ class ProductPage extends React.Component {
                                 return <div className="product_color" onClick={this.selectColor.bind(this, color)} key={index} style={{
                                     backgroundColor: color,
                                     borderColor: this.state.color === color ? "black" : 'transparent',
-
                                 }} />
                             })}
                         </div>
+
+                        {/* add to cart and stepper */}
                         <div className="buy_container">
                             <div className="stepper">
                                 <div onClick={this.decrement.bind(this)} >-</div>
@@ -161,6 +176,28 @@ class ProductPage extends React.Component {
                             </div>
                             <CartContext.Consumer>{(ctx) => <button onClick={ctx.addItem.bind(this, { ...this.state.product, amount: this.state.amount, size: this.state.size, color: this.state.color })} className="add_to_cart_btn">ADD TO CART</button>}</CartContext.Consumer>
 
+                        </div>
+                        {/* actions */}
+                        <div className="actions_container">
+                            <div className="icon_text_container">
+                                <div className="icon">
+                                    <HeartIcon />
+                                </div>
+                                <div>add to wishlist</div>
+                            </div>
+                            <div className="icon_text_container">
+                                <div className="icon">
+                                    <VideoIcon />
+                                </div>
+                                <div>video call</div>
+
+                            </div>
+                            <div className="icon_text_container">
+                                <div className="icon">
+                                    <ShareIcon />
+                                </div>
+                                <div>share</div>
+                            </div>
                         </div>
                     </div>
                 </div> : <div>

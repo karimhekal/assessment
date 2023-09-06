@@ -36,7 +36,7 @@ export const products = [
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
     sizes: ['2*3 M', '4*4 M', '3*4 M'],
     colors: ['#dcf4ad', '#90e90c', '#227aea', '#fcdffc'],
-    panoramic: true,
+    panoramic: false,
   },
   {
     id: '4',
@@ -61,7 +61,7 @@ export const products = [
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
     sizes: ['2*3 M', '4*4 M', '3*4 M'],
     colors: ['#4d29fe', '#b1a071', '#fbea87', '#1877af'],
-    panoramic: true,
+    panoramic: false,
   },
   {
     id: '6',
