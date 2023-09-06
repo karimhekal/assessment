@@ -113,6 +113,7 @@ class ProductPage extends React.Component {
                         </div>
                         <div className="main_image">
                             <img alt="product_image" src={require(`../../../public/images/gallery/${this.state.selectedImage}.png`)} width={"100%"} />
+                            {this.state.product.discount_price ? <div className="discount_tag">{parseInt((((this.state.product.price - this.state.product.discount_price) / this.state.product.price) * 100)) % 100}% OFF</div> : null}
                         </div>
                     </div>
 
@@ -124,7 +125,7 @@ class ProductPage extends React.Component {
                                 <div className="product_name">{this.state.product.name}</div>
                                 <Stars stars={this.state.product.stars} />
                             </div>
-                            <PanoramicIcon />
+                            {this.state.product.panoramic ? <PanoramicIcon /> : null}
                         </div>
 
 

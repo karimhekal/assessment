@@ -97,6 +97,7 @@
     // aspect-ratio: 2/3;
     object-fit: contain !important;
     padding: 1rem;
+    position: relative;
     // background-color: purple;
     border-radius: 1rem;
     border-style: solid;
@@ -287,6 +288,15 @@
 .custom-dot-list-style button {
     border: none;
     background: gray;
+}
+
+.discount_tag {
+    position: absolute;
+    top: 2rem;
+    left: 0rem;
+    background-color: var(--primary-color);
+    padding: 0.5rem 2rem;
+    color: white;
 }
 
 .react-multi-carousel-dot.react-multi-carousel-dot--active button {

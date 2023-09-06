@@ -4,8 +4,8 @@ export const products = [
     name: 'Name Of Product',
     gallery: ['1', '7', '3', '9'],
     stars: 3,
-    price: 90,
-    discount_price: 50,
+    price: 190,
+    discount_price: 80,
     describtion:
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
     sizes: ['2*3 M', '4*4 M', '3*4 M'],
@@ -17,8 +17,8 @@ export const products = [
     name: 'at deleniti',
     gallery: ['2', '8', '4', '10'],
     stars: 5,
-    price: 90,
-    discount_price: 50,
+    price: 50,
+    discount_price: 0,
     describtion:
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
     sizes: ['2*3 M', '4*4 M', '3*4 M'],
@@ -43,8 +43,8 @@ export const products = [
     name: 'eligendi',
     gallery: ['4', '10', '6', '2'],
     stars: 4,
-    price: 90,
-    discount_price: 50,
+    price: 130,
+    discount_price: 100,
     describtion:
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
     sizes: ['2*3 M', '4*4 M', '3*4 M'],
@@ -55,8 +55,8 @@ export const products = [
     id: '5',
     name: 'officiis nisi',
     gallery: ['5', '1', '7', '3'],
-    price: 90,
-    discount_price: 50,
+    price: 230,
+    discount_price: 210,
     describtion:
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
     sizes: ['2*3 M', '4*4 M', '3*4 M'],
