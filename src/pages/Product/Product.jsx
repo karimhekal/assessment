@@ -100,12 +100,14 @@ class ProductPage extends React.Component {
                     {/* gallery section */}
                     <div className="gallery">
                         <div className="images">
+
                             {this.state.product.gallery.map((image, index) => {
-                                return <img key={index} alt={`${image}`} onClick={() => {
+                                return <><img key={index} alt={`${image}`} onClick={() => {
                                     this.setState({
                                         selectedImage: image
                                     })
                                 }} src={require(`../../../public/images/gallery/${image}.png`)} width={100} />
+                                </>
                             })}
                         </div>
                         <div className="main_image">
@@ -145,7 +147,7 @@ class ProductPage extends React.Component {
                                     borderRadius: "100%",
                                     backgroundColor: color,
                                     borderWidth: "1.5px",
-                                    borderStyle:"solid",
+                                    borderStyle: "solid",
                                     borderColor: this.state.color === color ? "black" : 'transparent',
                                     width: "28.73px",
                                     height: "28.73px",

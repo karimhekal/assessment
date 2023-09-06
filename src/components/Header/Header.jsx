@@ -25,7 +25,8 @@ class Header extends React.Component {
 
                     <div className="header_section_1">
                         <MenuIcon />
-                        <img className="logo" src="/images/abdouLogo.png" alt="logo" width={90} height={90} />
+                        <img className="Header-logo" src={require(`../../../public/images/${"logo".toString()}.png`)} alt="Logos" />
+                        {/* <img className="logo" src={logo} alt="logoo" /> */}
                         <h4>Products</h4>
                         <h4>Best Seller</h4>
                         <h4>New Arrival</h4>
@@ -38,7 +39,10 @@ class Header extends React.Component {
                         </div>
                         {this.state.showCart ? <div onClick={this.toggleCart.bind(this)} className="backdrop" /> : null}
                         {this.state.showCart ? <div className="cart">
-                            <div className="mycart_title"><div>MY CART</div><div onClick={this.toggleCart.bind(this)}>X</div></div>
+                            <div className="mycart_title">
+                                <div>MY CART</div>
+                                <div className="x" onClick={this.toggleCart.bind(this)}>X</div>
+                            </div>
                             <div className="scrollable">
                                 {ctx.items.map((item) => {
                                     return <div className="cart_item_container">
