@@ -3,6 +3,7 @@ import React from 'react'
 import Layout from './components/Layout/Layout'
 import ProductPage from './pages/Product/Product'
 import { Route, Routes, useNavigate } from 'react-router'
+import CartProvider from './store/cart-provider'
 
 class App extends React.Component {
   constructor(props) {
@@ -25,11 +26,13 @@ class App extends React.Component {
 
   render() {
     return (
-      <Layout>
-        <Routes>
-          <Route path="/product/:id" element={<ProductPage />} />
-        </Routes>
-      </Layout>
+      <CartProvider>
+        <Layout>
+          <Routes>
+            <Route path="/product/:id" element={<ProductPage />} />
+          </Routes>
+        </Layout>
+      </CartProvider>
     )
   }
 }

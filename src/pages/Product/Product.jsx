@@ -6,6 +6,7 @@ import 'react-multi-carousel/lib/styles.css';
 import ProductCard from "../../components/ProductCard/ProductCard";
 import PanoramicIcon from "../../svg/PanoramicIcon";
 import Stars from "../../components/Stars/Stars";
+import CartContext from "../../store/cart-context";
 const responsive = {
     superLargeDesktop: {
         // the naming can be any, depends on you.
@@ -30,20 +31,27 @@ export default class ProductPage extends React.Component {
     constructor(props) {
         super(props)
         const productId = window.location.href.split('/')[4]
+        const product = products?.find((product) => product.id === productId)
         this.state = {
             selectedImage: products?.find((product) => product.id === productId)?.gallery[0],
-            product: products?.find((product) => product.id === productId)
+            product,
+            amount: 1
         }
 
     }
-    componentDidMount() {
-        const productId = window.location.href.split('/')[4]
-        console.log(productId)
-        this.state = {
-            selectedImage: products?.find((product) => product.id === productId)?.gallery[0],
-            product: products?.find((product) => product.id === productId)
-        }
+    increment() {
+        this.setState({
+            ...this.state,
+            amount: this.state.amount + 1
+        })
+    }
+    decrement() {
+        if (this.state.amount <= 1) { return; }
 
+        this.setState({
+            ...this.state,
+            amount: this.state.amount - 1
+        })
     }
 
     render() {
@@ -54,8 +62,8 @@ export default class ProductPage extends React.Component {
                     {/* gallery section */}
                     <div className="gallery">
                         <div className="images">
-                            {this.state.product.gallery.map((image) => {
-                                return <img alt={`${image}`} onClick={() => {
+                            {this.state.product.gallery.map((image, index) => {
+                                return <img key={index} alt={`${image}`} onClick={() => {
                                     this.setState({
                                         selectedImage: image
                                     })
@@ -86,20 +94,29 @@ export default class ProductPage extends React.Component {
                         <div className="describtion">{this.state.product.describtion}</div>
                         <div className="size">Size</div>
                         <div className="sizes_container">
-                            {this.state.product.sizes.map((size) => {
-                                return <div className="size_button">{size}</div>
+                            {this.state.product.sizes.map((size, index) => {
+                                return <div key={index} className="size_button">{size}</div>
                             })}
                         </div>
                         <div className="size">Colors</div>
                         <div className="sizes_container">
-                            {this.state.product.colors.map((color) => {
-                                return <div style={{
+                            {this.state.product.colors.map((color,index) => {
+                                return <div key={index} style={{
                                     borderRadius: "100%",
                                     backgroundColor: color,
                                     width: "28.73px",
                                     height: "28.73px",
                                 }} />
                             })}
+                        </div>
+                        <div className="buy_container">
+                            <div className="stepper">
+                                <div onClick={this.decrement.bind(this)} >-</div>
+                                <div>{this.state.amount}</div>
+                                <div onClick={this.increment.bind(this)}>+</div>
+                            </div>
+                            <CartContext.Consumer>{(ctx) => <button onClick={ctx.addItem.bind(this, { ...this.state.product, amount: this.state.amount })} className="add_to_cart_btn">ADD TO CART</button>}</CartContext.Consumer>
+
                         </div>
                     </div>
                 </div> : <div>
