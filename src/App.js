@@ -2,8 +2,9 @@ import './App.scss'
 import React from 'react'
 import Layout from './components/Layout/Layout'
 import ProductPage from './pages/Product/Product'
-import { Route, Routes, useNavigate } from 'react-router'
+import { Navigate, Route, Routes, useNavigate } from 'react-router'
 import CartProvider from './store/cart-provider'
+const LazyProductPage = React.lazy(() => import('./pages/Product/Product'))
 
 class App extends React.Component {
   constructor(props) {
@@ -29,7 +30,8 @@ class App extends React.Component {
       <CartProvider>
         <Layout>
           <Routes>
-            <Route path="/product/:id" element={<ProductPage />} />
+            <Route path="/" element={<Navigate to={'/product/1'} />} />
+            <Route path="/product/:id" element={<LazyProductPage />} />
           </Routes>
         </Layout>
       </CartProvider>
