@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/assessment/static/css/main.00d935df.css",
+    "main.js": "/assessment/static/js/main.f5ac19b5.js",
+    "static/js/787.01a743a1.chunk.js": "/assessment/static/js/787.01a743a1.chunk.js",
+    "static/media/4.png": "/assessment/static/media/4.1d02a450067c0e487381.png",
+    "static/media/2.png": "/assessment/static/media/2.b9769418d7a1b44f1bb1.png",
+    "static/media/3.png": "/assessment/static/media/3.cf913241e8eeca5eab85.png",
+    "static/media/1.png": "/assessment/static/media/1.fecf1a07260f6be15511.png",
+    "static/media/6.png": "/assessment/static/media/6.0cf228bd31c4c1357f46.png",
+    "static/media/Poppins-Italic.ttf": "/assessment/static/media/Poppins-Italic.e373f6163127e2d469af.ttf",
+    "static/media/Poppins-Light.ttf": "/assessment/static/media/Poppins-Light.7641a0f76ca9ef6c252c.ttf",
+    "static/media/Poppins-Regular.ttf": "/assessment/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
+    "static/media/Poppins-Bold.ttf": "/assessment/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
+    "static/media/10.png": "/assessment/static/media/10.3d9565d68bde14863582.png",
+    "static/media/9.png": "/assessment/static/media/9.67e5c816b6801d495967.png",
+    "static/media/8.png": "/assessment/static/media/8.fab305f7e3d71e806cad.png",
+    "static/media/7.png": "/assessment/static/media/7.6c5895d86a9dfff48605.png",
+    "static/media/revicons.eot": "/assessment/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/assessment/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/assessment/static/media/revicons.e8746a624ed098489406.woff",
+    "index.html": "/assessment/index.html",
+    "main.00d935df.css.map": "/assessment/static/css/main.00d935df.css.map",
+    "main.f5ac19b5.js.map": "/assessment/static/js/main.f5ac19b5.js.map",
+    "787.01a743a1.chunk.js.map": "/assessment/static/js/787.01a743a1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.00d935df.css",
+    "static/js/main.f5ac19b5.js"
+  ]
+}
