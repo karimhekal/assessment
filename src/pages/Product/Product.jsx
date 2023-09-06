@@ -34,11 +34,11 @@ class ProductPage extends React.Component {
         const productId = this.props.params.id
         const product = products?.find((product) => product.id === productId)
         this.state = {
-            selectedImage: product.gallery[0],
+            selectedImage: product?.gallery[0],
             product,
             amount: 1,
-            size: product.sizes[0],
-            color: product.colors[0],
+            size: product?.sizes[0],
+            color: product?.colors[0],
             id: productId
         }
 
@@ -51,7 +51,8 @@ class ProductPage extends React.Component {
             product,
             amount: 1,
             size: product.sizes[0],
-            id: productId
+            id: productId,
+            color: product.colors[0]
         })
     }
 
@@ -141,16 +142,13 @@ class ProductPage extends React.Component {
                             })}
                         </div>
                         <div className="size">Colors</div>
-                        <div className="sizes_container">
+                        <div className="colors_container">
+                            {/* product colors */}
                             {this.state.product.colors.map((color, index) => {
-                                return <div onClick={this.selectColor.bind(this, color)} key={index} style={{
-                                    borderRadius: "100%",
+                                return <div className="product_color" onClick={this.selectColor.bind(this, color)} key={index} style={{
                                     backgroundColor: color,
-                                    borderWidth: "1.5px",
-                                    borderStyle: "solid",
                                     borderColor: this.state.color === color ? "black" : 'transparent',
-                                    width: "28.73px",
-                                    height: "28.73px",
+
                                 }} />
                             })}
                         </div>
@@ -172,7 +170,6 @@ class ProductPage extends React.Component {
 
                 {/* you may also like section */}
                 <div className="bottom_section">
-
                     <h1>You May Also Like</h1>
                     <Carousel
                         responsive={responsive}
