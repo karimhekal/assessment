@@ -9,7 +9,7 @@ class Header extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            showCart: false
+            showCart: true
         }
     }
     toggleCart() {
@@ -36,9 +36,21 @@ class Header extends React.Component {
                             <SearchIcon />
                         </div>
                         <div className="icon" >
+                            {this.state.showCart ? <div onClick={this.toggleCart.bind(this)} className="backdrop" /> : null}
+
                             {this.state.showCart ? <div className="cart">
-                                {/* {JSON.stringify(ctx)} */}
-                                {JSON.stringify(ctx.totalAmount)}
+                                <div className="mycart_title"><div>MY CART</div><div>X</div></div>
+                                {ctx.items.map((item) => {
+                                    return <div>
+                                        <div>
+                                            <img src={require(`../../../public/images/gallery/${item.gallery[0]}.png`)} width={50} height={50} />
+                                            <div><div>{item.name}</div>
+                                                <div>{item.size}</div>
+                                                <div>{item.amount}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                })}
                             </div> : null}
                             <div onClick={() => this.toggleCart()}>
                                 <CartIcon /></div>

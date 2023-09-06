@@ -1,4 +1,5 @@
 {
+  "homepage": "http://karimhekal.github.io/assessment",
   "name": "assessment",
   "version": "0.1.0",
   "private": true,
@@ -19,6 +20,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -43,6 +46,7 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^8.0.2",
-    "@types/faker": "^6.6.9"
+    "@types/faker": "^6.6.9",
+    "gh-pages": "^6.0.0"
   }
 }

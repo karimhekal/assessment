@@ -7,6 +7,7 @@ import ProductCard from "../../components/ProductCard/ProductCard";
 import PanoramicIcon from "../../svg/PanoramicIcon";
 import Stars from "../../components/Stars/Stars";
 import CartContext from "../../store/cart-context";
+import withRouter from "../../components/WithRouter";
 const responsive = {
     superLargeDesktop: {
         // the naming can be any, depends on you.
@@ -27,17 +28,40 @@ const responsive = {
     }
 };
 
-export default class ProductPage extends React.Component {
+class ProductPage extends React.Component {
     constructor(props) {
         super(props)
-        const productId = window.location.href.split('/')[4]
+        const productId = this.props.params.id
         const product = products?.find((product) => product.id === productId)
         this.state = {
-            selectedImage: products?.find((product) => product.id === productId)?.gallery[0],
+            selectedImage: product.gallery[0],
             product,
-            amount: 1
+            amount: 1,
+            size: product.sizes[0],
+            id: productId
         }
 
+    }
+    init() {
+        const productId = this.props.params.id
+        const product = products?.find((product) => product.id === productId)
+        this.setState({
+            selectedImage: product.gallery[0],
+            product,
+            amount: 1,
+            size: product.sizes[0],
+            id: productId
+        })
+    }
+
+    componentDidUpdate(prevProps) {
+        const { id } = this.props?.params
+        console.log('prevv', prevProps.params.id)
+
+        if (prevProps.params.id !== id)
+            // The id has changed, update the state and trigger a re-render
+            this.init()
+        console.log('updatiiing')
     }
     increment() {
         this.setState({
@@ -53,7 +77,14 @@ export default class ProductPage extends React.Component {
             amount: this.state.amount - 1
         })
     }
+    selectSize(size) {
+        console.log('working', size)
+        this.setState({
+            ...this.state,
+            size: size
+        })
 
+    }
     render() {
 
         return <div className="product_page">
@@ -67,11 +98,11 @@ export default class ProductPage extends React.Component {
                                     this.setState({
                                         selectedImage: image
                                     })
-                                }} src={image} width={100} />
+                                }} src={require(`../../../public/images/gallery/${image}.png`)} width={100} />
                             })}
                         </div>
                         <div className="main_image">
-                            <img alt="product_image" src={this.state.selectedImage} width={"100%"} />
+                            <img alt="product_image" src={require(`../../../public/images/gallery/${this.state.selectedImage}.png`)} width={"100%"} />
                         </div>
                     </div>
 
@@ -95,12 +126,14 @@ export default class ProductPage extends React.Component {
                         <div className="size">Size</div>
                         <div className="sizes_container">
                             {this.state.product.sizes.map((size, index) => {
-                                return <div key={index} className="size_button">{size}</div>
+                                return <div onClick={this.selectSize.bind(this, size)} key={index} style={{
+                                    borderColor: this.state.size === size ? "red" : 'gray'
+                                }} className="size_button">{size}</div>
                             })}
                         </div>
                         <div className="size">Colors</div>
                         <div className="sizes_container">
-                            {this.state.product.colors.map((color,index) => {
+                            {this.state.product.colors.map((color, index) => {
                                 return <div key={index} style={{
                                     borderRadius: "100%",
                                     backgroundColor: color,
@@ -115,7 +148,7 @@ export default class ProductPage extends React.Component {
                                 <div>{this.state.amount}</div>
                                 <div onClick={this.increment.bind(this)}>+</div>
                             </div>
-                            <CartContext.Consumer>{(ctx) => <button onClick={ctx.addItem.bind(this, { ...this.state.product, amount: this.state.amount })} className="add_to_cart_btn">ADD TO CART</button>}</CartContext.Consumer>
+                            <CartContext.Consumer>{(ctx) => <button onClick={ctx.addItem.bind(this, { ...this.state.product, amount: this.state.amount, size: this.state.size })} className="add_to_cart_btn">ADD TO CART</button>}</CartContext.Consumer>
 
                         </div>
                     </div>
@@ -142,6 +175,7 @@ export default class ProductPage extends React.Component {
                         })}
                     </Carousel>
                 </div></div>
-        </div>
+        </div >
     }
 }
+export default withRouter(ProductPage)

@@ -1,14 +1,8 @@
-
 export const products = [
   {
     id: '1',
     name: 'Name Of Product',
-    gallery: [
-      'https://picsum.photos/seed/lXamB/640/480',
-      'https://picsum.photos/seed/pA288/640/480',
-      'https://picsum.photos/seed/ZFssDfW/640/480',
-      'https://picsum.photos/seed/tkAEbi9/640/480',
-    ],
+    gallery: ['1', '7', '3', '9'],
     stars: 3,
     price: 90,
     discount_price: 50,
@@ -21,12 +15,7 @@ export const products = [
   {
     id: '2',
     name: 'at deleniti',
-    gallery: [
-      'https://picsum.photos/seed/cdoz9A9Q/640/480',
-      'https://picsum.photos/seed/uk1tNUN8tO/640/480',
-      'https://picsum.photos/seed/UA79mx/640/480',
-      'https://picsum.photos/seed/l8a53LNX/640/480',
-    ],
+    gallery: ['2', '8', '4', '10'],
     stars: 5,
     price: 90,
     discount_price: 50,
@@ -39,12 +28,7 @@ export const products = [
   {
     id: '3',
     name: 'facere illum',
-    gallery: [
-      'https://picsum.photos/seed/EPAaJ/640/480',
-      'https://picsum.photos/seed/OJy1255/640/480',
-      'https://picsum.photos/seed/DoP4b/640/480',
-      'https://picsum.photos/seed/gnRYUl/640/480',
-    ],
+    gallery: ['3', '9', '5', '1'],
     price: 90,
     stars: 1,
     discount_price: 50,
@@ -57,12 +41,7 @@ export const products = [
   {
     id: '4',
     name: 'eligendi',
-    gallery: [
-      'https://picsum.photos/seed/3hu5cCca/640/480',
-      'https://picsum.photos/seed/ZWCuNxgVR/640/480',
-      'https://picsum.photos/seed/F5DcMz/640/480',
-      'https://picsum.photos/seed/rhYYPJLU/640/480',
-    ],
+    gallery: ['4', '10', '6', '2'],
     stars: 4,
     price: 90,
     discount_price: 50,
@@ -75,12 +54,7 @@ export const products = [
   {
     id: '5',
     name: 'officiis nisi',
-    gallery: [
-      'https://picsum.photos/seed/ww8yFxs/640/480',
-      'https://picsum.photos/seed/D1BatSmyLP/640/480',
-      'https://picsum.photos/seed/je22F4/640/480',
-      'https://picsum.photos/seed/phExBz5/640/480',
-    ],
+    gallery: ['5', '1', '7', '3'],
     price: 90,
     discount_price: 50,
     describtion:
@@ -92,12 +66,7 @@ export const products = [
   {
     id: '6',
     name: 'veritatis amet',
-    gallery: [
-      'https://picsum.photos/seed/7xNiLO0ZeR/640/480',
-      'https://picsum.photos/seed/UzRF1wEE8t/640/480',
-      'https://picsum.photos/seed/kdxHVFef/640/480',
-      'https://picsum.photos/seed/tL2we9d/640/480',
-    ],
+    gallery: ['6', '2', '8', '4'],
     price: 90,
     discount_price: 50,
     stars: 4,

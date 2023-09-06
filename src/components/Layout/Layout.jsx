@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../Header/Header";
-
+import '../../App.scss'
 export default class Layout extends React.Component {
     constructor(props) {
         super(props)
@@ -9,7 +9,11 @@ export default class Layout extends React.Component {
     render() {
         return <div>
             <Header />
-            {this.props.children}
+            <div style={{
+                paddingTop: "5rem"
+            }}>
+                {this.props.children}
+            </div>
         </div>
     }
 }

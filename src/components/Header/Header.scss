@@ -1,4 +1,5 @@
 .header {
+    z-index: 99999999999999999999999999999999999999999999999999999999 !important;
     height: 2rem;
     padding: 2.5rem 1rem 3rem 3rem;
     display: flex;
@@ -11,14 +12,23 @@
     position: fixed;
 }
 
+.mycart_title {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+}
+
 .cart {
+    padding: 1rem 2rem;
+    z-index: 9009999999999999999999000 !important;
     position: absolute;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     pad: 1rem 2rem;
     width: 30rem;
     height: 500px;
+    right: 20px;
     background-color: white;
     top: 50px;
     border-radius: 1rem;
@@ -27,13 +37,12 @@
     border-color: #F5F5F5;
 }
 
+
 .header_section_1 {
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 100%;
     gap: 2rem;
-    height: 100%;
 
     img {
         width: 100px;
@@ -43,6 +52,21 @@
     h4 {
         font-weight: lighter;
     }
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Semi-transparent gray background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    /* Ensure the modal is on top of other content */
 }
 
 .header_section_2 {
