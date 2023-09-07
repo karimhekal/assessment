@@ -136,6 +136,13 @@
 }
 
 .header_section_1 {
+
+    @media (max-width:800px) {
+        h4 {
+            display: none;
+        }
+    }
+
     display: flex;
     flex-direction: row;
     align-items: center;
