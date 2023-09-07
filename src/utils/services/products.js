@@ -66,7 +66,7 @@ export const products = [
   {
     id: '6',
     name: 'veritatis amet',
-    gallery: ['6', '2', '8', '4'],
+    gallery: ['1', '2', '8', '4'],
     price: 90,
     discount_price: 50,
     stars: 4,
