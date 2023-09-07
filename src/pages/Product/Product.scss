@@ -10,7 +10,8 @@
 
 .product_color {
     border-radius: 100%;
-    border-width: 1.5px;
+    border-width: 2px;
+    border-color: var(--secondary-color);
     border-style: solid;
     width: 28.73px;
     height: 28.73px;
@@ -169,7 +170,7 @@
 .size_button {
     cursor: pointer;
     border-radius: 6.577px;
-    border: 1.644px solid var(--secondary-color);
+    border: 2px solid var(--secondary-color);
     display: flex;
     padding: 10.688px 18.087px;
     justify-content: center;

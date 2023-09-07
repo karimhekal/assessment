@@ -149,7 +149,7 @@ class ProductPage extends React.Component {
                         <div className="sizes_container">
                             {this.state.product.sizes.map((size, index) => {
                                 return <div onClick={this.selectSize.bind(this, size)} key={index} style={{
-                                    borderColor: this.state.size === size ? "red" : 'gray'
+                                    borderColor: this.state.size === size ? "var(--primary-color)" : 'gray'
                                 }} className="size_button">{size}</div>
                             })}
                         </div>
@@ -162,7 +162,7 @@ class ProductPage extends React.Component {
                             {this.state.product.colors.map((color, index) => {
                                 return <div className="product_color" onClick={this.selectColor.bind(this, color)} key={index} style={{
                                     backgroundColor: color,
-                                    borderColor: this.state.color === color ? "black" : 'transparent',
+                                    borderColor: this.state.color === color ? "var(--primary-color)" : 'var(--secondary-color)',
                                 }} />
                             })}
                         </div>
