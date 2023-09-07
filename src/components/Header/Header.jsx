@@ -67,8 +67,8 @@ class Header extends React.Component {
                             </div>
                             <div className="sub_total"><div>Sub Total:</div> <div className="sub_total_number">{ctx.totalAmount} EGP</div></div>
                         </div> : null}
-                        <div className="icon" >
-                            <div onClick={() => this.toggleCart()}>
+                        <div className="icon" onClick={() => this.toggleCart()} >
+                            <div >
                                 <CartIcon /></div>
                             <div className="cart_number">{ctx.items.length}</div>
                         </div>
