@@ -25,7 +25,7 @@ class Header extends React.Component {
 
                     <div className="header_section_1">
                         <MenuIcon />
-                        <img loading="lazy" className="Header-logo" src={require(`../../../public/images/${"logo".toString()}.png`)} alt="Logos" />
+                        <img loading="lazy" className="logo" src={require(`../../../public/images/${"logo".toString()}.png`)} alt="Logos" />
                         <h4>Products</h4>
                         <h4>Best Seller</h4>
                         <h4>New Arrival</h4>

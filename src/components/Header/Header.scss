@@ -74,8 +74,8 @@
 }
 
 .logo {
-    width: 50px;
-    height: 50px;
+    width: 90px !important;
+    aspect-ratio: 500/175.3; // dimenstions of the logo on figma
     background-color: gray;
     display: flex;
     justify-content: center;
