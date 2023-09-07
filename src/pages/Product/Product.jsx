@@ -11,6 +11,7 @@ import withRouter from "../../components/WithRouter";
 import HeartIcon from "../../svg/HeartIcon";
 import ShareIcon from "../../svg/ShareIcon";
 import VideoIcon from "../../svg/VideoIcon";
+import getDiscountPercentage from "../../utils/functions";
 const responsive = {
     superLargeDesktop: {
         // the naming can be any, depends on you.
@@ -115,7 +116,7 @@ class ProductPage extends React.Component {
                         </div>
                         <div className="main_image">
                             <img loading="lazy" alt="product_image" src={require(`../../../public/images/gallery/${this.state.selectedImage}.png`)} width={"100%"} />
-                            {this.state.product.discount_price ? <div className="discount_tag">{parseInt((((this.state.product.price - this.state.product.discount_price) / this.state.product.price) * 100)) % 100}% OFF</div> : null}
+                            {this.state.product.discount_price ? <div className="discount_tag">{getDiscountPercentage(this.state.product.price, this.state.product.discount_price)}% OFF</div> : null}
                         </div>
                     </div>
 

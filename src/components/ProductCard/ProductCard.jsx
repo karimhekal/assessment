@@ -7,6 +7,7 @@ import CartContext from "../../store/cart-context";
 import withRouter from "../WithRouter";
 import PanoramicIcon from "../../svg/PanoramicIcon";
 import Panoramic360Icon from "../../svg/Panoramic360Icon";
+import getDiscountPercentage from "../../utils/functions";
 
 
 
@@ -27,6 +28,7 @@ class ProductCard extends React.Component {
                 return <div key={this.props.id} className="product_card">
 
                     {this.state.panoramic ? <div className="panoramic_card_tag"><Panoramic360Icon /></div> : null}
+                    {this.state.discount_price ? <div className="discount_card_tag">{getDiscountPercentage(this.state.price, this.state.discount_price)} % OFF</div> : null}
                     <div>
                         <div onClick={() => {
                             this.props.navigate(`/product/${this.state.id}`)
