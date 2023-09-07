@@ -16,6 +16,23 @@
     align-items: flex-start;
 }
 
+.product_discount_price {
+    color: #818181;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17.438px;
+    line-height: 100%;
+    font-variant: small-caps;
+    text-decoration-line: line-through;
+}
+
+.price_and_discount {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .discount_card_tag {
     position: absolute;
     top: 2rem;

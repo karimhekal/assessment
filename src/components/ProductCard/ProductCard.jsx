@@ -38,7 +38,10 @@ class ProductCard extends React.Component {
                         <div className="product_card_name">{this.state.name}</div>
                         <div className="product_describtion">{this.state.describtion}</div>
                         <Stars stars={this.state.stars} />
-                        <div className="product_price">{this.state.price} EGP</div>
+                        <div className="price_and_discount">
+                            <div className="product_price">{this.state.price} EGP</div>
+                            {this.state.discount_price ? <div className="product_discount_price">{this.state.discount_price} EGP</div> : null}
+                        </div>
                     </div>
                     <div className="product_bottom_section">
                         <button onClick={ctx.addItem.bind(this, { amount: 1, ...this.props.item, size: this.props.item.sizes[0], color: this.props.item.colors[0] })} className="product_button" >ADD TO CART</button>
