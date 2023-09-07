@@ -5,6 +5,8 @@ import HeartIcon from "../../svg/HeartIcon";
 import Stars from "../Stars/Stars";
 import CartContext from "../../store/cart-context";
 import withRouter from "../WithRouter";
+import PanoramicIcon from "../../svg/PanoramicIcon";
+import Panoramic360Icon from "../../svg/Panoramic360Icon";
 
 
 
@@ -23,6 +25,8 @@ class ProductCard extends React.Component {
         return <CartContext.Consumer>
             {(ctx) => {
                 return <div key={this.props.id} className="product_card">
+
+                    {this.state.panoramic ? <div className="panoramic_card_tag"><Panoramic360Icon /></div> : null}
                     <div>
                         <div onClick={() => {
                             this.props.navigate(`/product/${this.state.id}`)
