@@ -29,7 +29,7 @@ class ProductCard extends React.Component {
                         }} className="product_card_image">
                             <img loading="lazy" alt="product" src={`${require(`../../../public/images/gallery/${this.state.gallery[1]}.png`)}`} />
                         </div>
-                        <div className="product_name">{this.state.name}</div>
+                        <div className="product_card_name">{this.state.name}</div>
                         <div className="product_describtion">{this.state.describtion}</div>
                         <Stars stars={this.state.stars} />
                         <div className="product_price">{this.state.price} EGP</div>
